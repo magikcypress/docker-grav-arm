@@ -54,8 +54,11 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
     mv -T /var/www/grav-admin /var/www/html && \
     rm grav-admin.zip
 
+
 # Return to root user
 USER root
+
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Copy init scripts
 # COPY docker-entrypoint.sh /entrypoint.sh
