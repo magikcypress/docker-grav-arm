@@ -70,4 +70,4 @@ VOLUME ["/var/www/html"]
 EXPOSE 8080
 
 # ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["apache2-foreground"]
+CMD ["sh", "-c", "apache2-foreground"]
