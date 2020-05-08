@@ -71,6 +71,9 @@ VOLUME ["/var/www/html"]
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 
+# Return to www-data user
+USER www-data
+
 # Expose port 
 EXPOSE 8080
 
