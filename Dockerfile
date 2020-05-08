@@ -43,8 +43,8 @@ RUN chown www-data:www-data /var/www
 USER www-data
 
 # Define Grav version and expected SHA1 signature
-ENV GRAV_VERSION 1.6.23
-ENV GRAV_SHA1 c0ee03ebca3bb81e790274b52b72930737f0a761
+ENV GRAV_VERSION 1.6.24
+ENV GRAV_SHA1 186157b52f41151d8cb5bd0471a11f66fc316df9
 
 # Install grav
 WORKDIR /var/www
@@ -62,6 +62,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Copy init scripts
 # COPY docker-entrypoint.sh /entrypoint.sh
+
+# provide container inside image for data persistance
+VOLUME ["/var/www/html"]
 
 # ENTRYPOINT ["/entrypoint.sh"]
 # CMD ["apache2-foreground"]
