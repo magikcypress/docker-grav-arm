@@ -59,6 +59,7 @@ RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GR
 USER root
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+CMD sed -i "s/80/8080/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
 # Copy init scripts
 # COPY docker-entrypoint.sh /entrypoint.sh
