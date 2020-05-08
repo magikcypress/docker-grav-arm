@@ -66,5 +66,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # provide container inside image for data persistance
 VOLUME ["/var/www/html"]
 
+EXPOSE 8080
+
 # ENTRYPOINT ["/entrypoint.sh"]
 # CMD ["apache2-foreground"]
