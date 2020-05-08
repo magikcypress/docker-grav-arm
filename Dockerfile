@@ -42,6 +42,10 @@ RUN pecl install apcu \
 RUN chown www-data:www-data /var/www
 USER www-data
 
+# Env user run
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+
 # Define Grav version and expected SHA1 signature
 ENV GRAV_VERSION 1.6.24
 ENV GRAV_SHA1 186157b52f41151d8cb5bd0471a11f66fc316df9
