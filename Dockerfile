@@ -65,11 +65,16 @@ RUN sed -i "s/80/8080/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache
 # COPY docker-entrypoint.sh /entrypoint.sh
 
 # provide container inside image for data persistance
-VOLUME ["/var/www/html"]
+VOLUME /var/www/html
 
 # Env user run
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
+ENV APP_NAME="grav" \
+    IMAGE_VERSION="latest" \
+    GRAV_EMAIL="user@example.com" \
+    GRAV_FULL_NAME="Full Name" \
+    GRAV_PASSWORD="grav" \
+    GRAV_USERNAME="superuser" \
+    GRAV_TITLE="Administrator"
 
 # Return to www-data user
 USER www-data
